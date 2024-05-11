@@ -1,82 +1,73 @@
 {
     "camiones": [
         {
-            "id":"1",
+            "id":1,
             "marca":"Hyundai",
             "valorxruta":"$92.500",
-            "capacidad":"12 Pallets"
+            "capacidad":"12 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg"
         },
         {
-            "id":"2",
+            "id":2,
             "marca":"Volkswagen",
             "valorxruta":"$92.500",
-            "capacidad":"12 Pallets"
+            "capacidad":"12 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg"
         },
         {
-            "id":"3",
+            "id":3,
             "marca":"Hyundai pequeño",
             "valorxruta":"$66.500",
-            "capacidad":"8 Pallets"
+            "capacidad":"8 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg"
         },
         {
-            "id":"4",
+            "id":4,
             "marca":"Hyundai Grande",
             "valorxruta":"$106.500",
-            "capacidad":"16 Pallets"
+            "capacidad":"16 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg"
         }
     ],
-    "ramplaSantiago":[ 
-        {
-            "id":"1",
-            "metros":"20 metros",
-            "valorxruta":"$206.500",
-            "capacidad":"36 Pallets"
-        },
-        {
-            "id":"2",
-            "metros":"18 metros",
-            "valorxruta":"$189.500",
-            "capacidad":"32 Pallets"
-        },
-        {
-            "id":"3",
-            "metros":"17 metros",
-            "valorxruta":"$167.500",
-            "capacidad":"28 Pallets"
-        },
-        {
-            "id":"4",
-            "metros":"15.5 metros",
-            "valorxruta":"$143.500",
-            "capacidad":"26 Pallets"
-        }
 
-    ],
-    "ramplaRahcagua":[ 
+    "conrampla":[ 
         {
-            "id":"1",
+            "id":1,
             "metros":"20 metros",
-            "valorxruta":"$425.000",
-            "capacidad":"36 Pallets"
+            "capacidad":"36 Pallets",
+            "cityxvalor": {
+                "santiago":"$206.500",
+                "rancagua":"$425.000"
+            }
         },
         {
-            "id":"2",
+            "id":2,
             "metros":"18 metros",
-            "valorxruta":"$399.00",
-            "capacidad":"32 Pallets"
+            "capacidad":"32 Pallets",
+            "cityxvalor": {
+                "santiago":"$189.500",
+                "rancagua":"$399.000"
+            }
         },
         {
-            "id":"3",
+            "id":3,
             "metros":"17 metros",
-            "valorxruta":"$270.000",
-            "capacidad":"28 Pallets"
+            "capacidad":"28 Pallets",
+            "cityxvalor": {
+                "santiago":"$167.500",
+                "rancagua":"$270.000"
+            }
         },
         {
-            "id":"4",
+            "id":4,
             "metros":"15.5 metros",
-            "valorxruta":"$220.000",
-            "capacidad":"26 Pallets"
+            "capacidad":"26 Pallets",
+            "cityxvalor": {
+                "santiago":"$143.500",
+                "rancagua":"$220.000"
+            }
         }
 
     ]
 }
+

@@ -1,0 +1,82 @@
+{
+    "camiones": [
+        {
+            "id":"1",
+            "marca":"Hyundai",
+            "valorxruta":"$92.500",
+            "capacidad":"12 Pallets"
+        },
+        {
+            "id":"2",
+            "marca":"Volkswagen",
+            "valorxruta":"$92.500",
+            "capacidad":"12 Pallets"
+        },
+        {
+            "id":"3",
+            "marca":"Hyundai pequeño",
+            "valorxruta":"$66.500",
+            "capacidad":"8 Pallets"
+        },
+        {
+            "id":"4",
+            "marca":"Hyundai Grande",
+            "valorxruta":"$106.500",
+            "capacidad":"16 Pallets"
+        }
+    ],
+    "ramplaSantiago":[ 
+        {
+            "id":"1",
+            "metros":"20 metros",
+            "valorxruta":"$206.500",
+            "capacidad":"36 Pallets"
+        },
+        {
+            "id":"2",
+            "metros":"18 metros",
+            "valorxruta":"$189.500",
+            "capacidad":"32 Pallets"
+        },
+        {
+            "id":"3",
+            "metros":"17 metros",
+            "valorxruta":"$167.500",
+            "capacidad":"28 Pallets"
+        },
+        {
+            "id":"4",
+            "metros":"15.5 metros",
+            "valorxruta":"$143.500",
+            "capacidad":"26 Pallets"
+        }
+
+    ],
+    "ramplaRahcagua":[ 
+        {
+            "id":"1",
+            "metros":"20 metros",
+            "valorxruta":"$425.000",
+            "capacidad":"36 Pallets"
+        },
+        {
+            "id":"2",
+            "metros":"18 metros",
+            "valorxruta":"$399.00",
+            "capacidad":"32 Pallets"
+        },
+        {
+            "id":"3",
+            "metros":"17 metros",
+            "valorxruta":"$270.000",
+            "capacidad":"28 Pallets"
+        },
+        {
+            "id":"4",
+            "metros":"15.5 metros",
+            "valorxruta":"$220.000",
+            "capacidad":"26 Pallets"
+        }
+
+    ]
+}

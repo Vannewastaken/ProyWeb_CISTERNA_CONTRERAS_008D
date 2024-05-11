@@ -25,7 +25,7 @@ function iniciarSesion(){
         document.getElementById('email').focus();
 
     }
-    else if (p.length < 3) {
+    else if (p.length < 8) {
         alert('Error..debe ingresar una contraseña válida');
         document.getElementById('password').value = "";
         document.getElementById('password').focus();

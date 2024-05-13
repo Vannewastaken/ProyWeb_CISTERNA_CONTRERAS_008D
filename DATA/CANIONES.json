@@ -35,15 +35,18 @@
             "id":1,
             "metros":"20 metros",
             "capacidad":"36 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg",
             "cityxvalor": {
                 "santiago":"$206.500",
                 "rancagua":"$425.000"
             }
+            
         },
         {
             "id":2,
             "metros":"18 metros",
             "capacidad":"32 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg",
             "cityxvalor": {
                 "santiago":"$189.500",
                 "rancagua":"$399.000"
@@ -53,6 +56,7 @@
             "id":3,
             "metros":"17 metros",
             "capacidad":"28 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg",
             "cityxvalor": {
                 "santiago":"$167.500",
                 "rancagua":"$270.000"
@@ -62,6 +66,7 @@
             "id":4,
             "metros":"15.5 metros",
             "capacidad":"26 Pallets",
+            "img":"https://www.zentrumcamiones.cl/wp-content/uploads/2023/03/Zentrum-Camiones-Volkswagen-25360-hr-v-tronic.jpg",
             "cityxvalor": {
                 "santiago":"$143.500",
                 "rancagua":"$220.000"

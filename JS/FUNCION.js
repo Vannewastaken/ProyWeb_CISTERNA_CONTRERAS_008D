@@ -75,9 +75,9 @@ function registrarUsuario(){
     }
     else if (con.length < 8) {
         alert('Error..debe ingresar una contraseña de 8 caracteres o más');
-         document.getElementById('contraseña').value = "";
-         document.getElementById('contraseña').focus();
-     }
+        document.getElementById('contraseña').value = "";
+        document.getElementById('contraseña').focus();
+    }
      else if (concon !== con) {
         alert('Error..las contraseñas no coinciden');
         document.getElementById('contraseña').value = "";
@@ -89,5 +89,19 @@ function registrarUsuario(){
     }
     
 }
+
+fetch('https://api.boostr.cl/holidays.json')
+    .then(response => response.json())
+    .then(data => {
+        // Manipular los datos recibidos y mostrarlos en el elemento holidays
+        const holidaysElement = document.getElementById('holidays');
+        holidaysElement.innerHTML = '<h2>Días festivos</h2>';
+        data.forEach(holiday => {
+            holidaysElement.innerHTML += `<p>${holiday.date}: ${holiday.name}</p>`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
 
 

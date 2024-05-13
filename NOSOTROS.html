@@ -97,6 +97,10 @@
             </div>
         </div>
     </div>
+    <!-- Agregar elemento para mostrar los datos de la API -->
+    <div class="container">
+        <div id="holidays"></div>
+    </div>
 
     
 <!--FOOTER-->
@@ -121,5 +125,37 @@
 
     <!-- BOOTSTRAP 5 + JAVA SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/FUNCION.js"></script>
+    <script>
+        // URL de la API
+        const apiUrl = 'https://api.boostr.cl/holidays.json';
+
+        // URL del proxy CORS Anywhere
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+        // URL final para hacer la solicitud
+        const finalUrl = proxyUrl + apiUrl;
+
+        // Hacer una solicitud a la API a través de CORS Anywhere
+        fetch(finalUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Manipular y mostrar los datos en el HTML
+            const holidaysContainer = document.getElementById('holidays');
+            holidaysContainer.innerHTML = '<h2>Días Festivos</h2>';
+            const holidaysList = document.createElement('ul');
+
+            data.data.forEach(holiday => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${holiday.date}: ${holiday.title}`;
+                holidaysList.appendChild(listItem);
+            });
+
+            holidaysContainer.appendChild(holidaysList);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    </script>
 </body>
 </html>

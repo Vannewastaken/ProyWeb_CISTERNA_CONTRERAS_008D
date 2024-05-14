@@ -105,3 +105,58 @@ fetch('https://api.boostr.cl/holidays.json')
     });
 
 
+
+    //API NUESTRA(SERVICIOS =CAMIONES)
+
+    function mostrarRampla(){
+        let url='http://localhost:3300/conrampla';
+         //implementar Fetch que permita la información de los camiones
+       fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarRampla(data))
+         .catch(error => console.log(error))
+    
+        const mostrarRampla=(data)=>{
+            console.log(data)
+            let texto=""
+           for(var i=0;i<data.length;i++){
+              texto+=`<tr>
+                    <td>${data[i].id}</td>
+                    <td>${data[i].metros}</td>
+                    <td>${data[i].capacidad}</td>
+                    <td>${data[i].cityxvalor.santiago}</td>
+                    <td>${data[i].cityxvalor.rancagua}</td>
+                    <td><img src="${data[i].img}"></td>
+                    </tr>`
+            }
+             document.getElementById('rampla').innerHTML=texto;
+         }
+    
+    
+    }
+    
+    function mostrarCamiones(){
+        let url='http://localhost:3300/camiones';
+         //implementar Fetch que permita la información de los camiones
+        fetch(url)
+        .then(response => response.json())
+        .then(data => mostrarCamiones(data))
+        .catch(error => console.log(error))
+    
+        const mostrarCamiones=(data)=>{
+            console.log(data)
+            let texto=""
+            for(var i=0;i<data.length;i++){
+                texto+=`<tr>
+                    <td>${data[i].id}</td>
+                    <td>${data[i].marca}</td>
+                    <td>${data[i].capacidad}</td>
+                    <td>${data[i].valorxruta}</td>
+                    <td><img src="${data[i].img}"></td>
+                    </tr>`
+            }
+            document.getElementById('camiones').innerHTML=texto;
+        }
+    
+    
+    }

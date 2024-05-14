@@ -12,6 +12,7 @@ function togglePasswordVisibility() {
     }
 }
 
+//VALIDAR INICIO DE SESIÓN
 const expresion = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 function iniciarSesion(){
     let c = document.getElementById('email').value;
@@ -90,6 +91,7 @@ function registrarUsuario(){
     
 }
 
+//API FERIADOS: LUKAS
 fetch('https://api.boostr.cl/holidays.json')
     .then(response => response.json())
     .then(data => {
@@ -105,58 +107,84 @@ fetch('https://api.boostr.cl/holidays.json')
     });
 
 
+//API CAMIONES (SERIVICIOS) :VALE
 
-    //API NUESTRA(SERVICIOS =CAMIONES)
+function getCamion(done) {
+    let url = 'http://localhost:3300/camiones';
 
-    function mostrarRampla(){
-        let url='http://localhost:3300/conrampla';
-         //implementar Fetch que permita la información de los camiones
-       fetch(url)
+    fetch(url)
         .then(response => response.json())
-        .then(data => mostrarRampla(data))
-         .catch(error => console.log(error))
-    
-        const mostrarRampla=(data)=>{
-            console.log(data)
-            let texto=""
-           for(var i=0;i<data.length;i++){
-              texto+=`<tr>
-                    <td>${data[i].id}</td>
-                    <td>${data[i].metros}</td>
-                    <td>${data[i].capacidad}</td>
-                    <td>${data[i].cityxvalor.santiago}</td>
-                    <td>${data[i].cityxvalor.rancagua}</td>
-                    <td><img src="${data[i].img}"></td>
-                    </tr>`
-            }
-             document.getElementById('rampla').innerHTML=texto;
-         }
-    
-    
-    }
-    
-    function mostrarCamiones(){
-        let url='http://localhost:3300/camiones';
-         //implementar Fetch que permita la información de los camiones
-        fetch(url)
+        .then(data => {
+            done(data);
+        });
+}
+
+getCamion(data => {
+    console.log(data);
+    data.forEach(camiones => {
+        const html = `
+               
+        <div class="card custom-card d-flex ">
+                <img class="card-img-top" src="${camiones.img}" alt="Camion" style="height: 300px;">
+                <div class="card-body text-left">
+                    <h4 class="card-title" >Camión ${camiones.marca}</h4>
+                    <button type="button" class="btn btnservicios" data-bs-toggle="collapse" data-bs-target="#${camiones.id}">Descripción</button>
+                    <div id="${camiones.id}" class="collapse">
+                        <p class="cuerpocarta">Capacidad: ${camiones.capacidad}</p>
+                        <hr>
+                        <p class="cuerpocarta">Valor: ${camiones.valorxruta}</p>
+                    </div>
+                </div>
+            </div>
+        
+      
+
+        `;
+
+        const main = document.getElementById("camiones-row");
+        main.insertAdjacentHTML('beforeend', html);
+    });
+});
+
+//con rampla
+
+function getRampla(done) {
+    let url = 'http://localhost:3300/conrampla';
+
+    fetch(url)
         .then(response => response.json())
-        .then(data => mostrarCamiones(data))
-        .catch(error => console.log(error))
-    
-        const mostrarCamiones=(data)=>{
-            console.log(data)
-            let texto=""
-            for(var i=0;i<data.length;i++){
-                texto+=`<tr>
-                    <td>${data[i].id}</td>
-                    <td>${data[i].marca}</td>
-                    <td>${data[i].capacidad}</td>
-                    <td>${data[i].valorxruta}</td>
-                    <td><img src="${data[i].img}"></td>
-                    </tr>`
-            }
-            document.getElementById('camiones').innerHTML=texto;
-        }
-    
-    
-    }
+        .then(data => {
+            done(data);
+        });
+}
+
+getRampla(data => {
+    console.log(data);
+    data.forEach(conrampla => {
+        const html = `
+               
+        <div class="card custom-card d-flex ">
+                <img class="card-img-top" src="${conrampla.img}" alt="CamionRampla" style="height: 300px;">
+                <div class="card-body text-left">
+                    <h4 class="card-title" >Rampla de ${conrampla.metros}</h4>
+                    <button type="button" class="btn btnservicios" data-bs-toggle="collapse" data-bs-target="#r${conrampla.id}">Descripción</button>
+                    <div id="r${conrampla.id}" class="collapse">
+                        <p class="cuerpocarta">Capacidad: ${conrampla.capacidad}</p>
+                        <hr>
+                        <p class="cuerpocarta">Precio por Ciudad: </p>
+                        <ul class="ulservicio">
+                            <li>Santiago: ${conrampla.cityxvalor.santiago}</li>
+                            <li>Rancagua: ${conrampla.cityxvalor.rancagua}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+      
+
+        `;
+
+        const main = document.getElementById("rampla-row");
+        main.insertAdjacentHTML('beforeend', html);
+    });
+});

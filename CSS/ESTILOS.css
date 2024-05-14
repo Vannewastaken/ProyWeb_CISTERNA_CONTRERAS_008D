@@ -85,3 +85,57 @@ h3{
   
 
 }
+/* 
+ESTILOS PARA SERVICIOS */
+
+.card{
+  padding: 10px;
+  margin: 20px;
+}
+
+.card-title{
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+
+.row_style{
+  
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+.custom-card {
+  max-width: 100%; /* Establece el ancho máximo de las cartas */
+  width: 400px; /* Asegura que las cartas ocupen todo el ancho de la columna */
+   /* Centra horizontalmente las cartas */ 
+}
+
+h4{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btnservicios{
+  margin: 20px;
+  background-color: #171718;
+  border-width: 0cap;
+  color: aliceblue;
+  font-family: "Almarai", sans-serif;
+ }
+ 
+ 
+ .ulservicio{
+  margin:20px;
+}
+ 
+ .cuerpocarta{
+     margin: 20px;
+     font-family: "Almarai", sans-serif;
+ }
+
+ hr{
+  width: 90%;
+  margin: 20px;
+}
